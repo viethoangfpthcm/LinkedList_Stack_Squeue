@@ -3,9 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
+
 import model.Node;
+
 /**
- *
  * @author NHIM
  */
 public class Linked_List {
@@ -14,7 +15,7 @@ public class Linked_List {
     //them node vao vi tri dau tien
     public void addFirst(int data) {
         Node newNode = new Node(data);
-        if(head == null){
+        if (head == null) {
             head = newNode;
             return;
         }
@@ -40,10 +41,10 @@ public class Linked_List {
     }
 
     //them vào 1 vị trí bất kì
-    public void add(int data, int index){
+    public void add(int data, int index) {
         Node newNode = new Node(data);
 
-        if(index == 1){
+        if (index == 1) {
             addFirst(data);
             return;
         } else {
@@ -59,7 +60,7 @@ public class Linked_List {
     }
 
 
-// in ra mau hinh linked list
+    // in ra mau hinh linked list
     public void printList() {
         Node current = head;
         while (current != null) {
@@ -68,12 +69,13 @@ public class Linked_List {
         }
         System.out.println();
     }
-// lay node o mot vi tri bat ki
+
+    // lay node o mot vi tri bat ki
     public int getNodeByIndex(int index) {
         Node current = head;
         int count = 0;
         while (current != null) {
-            if(count == index){
+            if (count == index) {
                 return current.getData();
             }
             count++;
@@ -81,61 +83,63 @@ public class Linked_List {
         }
         throw new IndexOutOfBoundsException("Index khong hop le!!!");
     }
-// in ra do dai cua linked list
-    public int lengthOfList(){
+
+    // in ra do dai cua linked list
+    public int lengthOfList() {
         Node current = head;
         int count = 0;
-        while (current != null){
+        while (current != null) {
             count++;
             current = current.getNext();
         }
         return count;
     }
 
-// xoa node o vi tri dau tien
-    public void removeFirst(){
-        Node node = null;
-        if(head == null){
+    // xoa node o vi tri dau tien
+    public int removeFirst() {
+        if (head == null) {
             System.out.println("khong co node nao trong linked list");
-            return;
+            return Integer.MIN_VALUE;
         }
+        Node temp = head;
         head = head.getNext();
-        node = head;
-        while (node != null){
-            node = node.getNext();
-        }
+        return temp.data;
     }
 
-// xóa node ở vị trí cuối cùng
-    public void removeLast(){
+    // xóa node ở vị trí cuối cùng
+    public int removeLast() {
         Node temp = head;
-        if(head == null){
+        if (head == null) {
             System.out.println("Khong co node nao trong linked list!!!");
-            return;
+            return Integer.MIN_VALUE;
         }
-        if (head.next == null){
+        if (head.next == null) {
             head.setNext(null);
-            return;
+            return Integer.MIN_VALUE;
         }
 
-        while (temp.next.next != null){
+        while (temp.next.next != null) {
             temp = temp.next;
         }
+        Node node = temp.next;
         temp.next = null;
+        return node.data;
     }
 
-// xóa node ở vị trí bất kì
-    public void removeIndex(int index){
-        if (head == null){
+    // xóa node ở vị trí bất kì
+    public int removeIndex(int index) {
+        if (head == null) {
             System.out.println("khong co node nao trong linked list!!!");
-            return;
+            return Integer.MIN_VALUE;
         }
         Node temp = head;
         int count = 0;
-        while (count < index -1){
+        while (count < index - 1) {
             temp = temp.next;
             count++;
         }
+        Node node = temp.next;
         temp.next = temp.next.next;
+        return node.data;
     }
 }

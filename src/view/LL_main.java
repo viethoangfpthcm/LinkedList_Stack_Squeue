@@ -33,18 +33,18 @@ public class LL_main {
 
         System.out.println("do dai cua linked list: " + sp.lengthOfList());
 
-        System.out.println("xoa node dau tien trong linked list");
-        sp.removeFirst();
+        System.out.println("xoa node dau tien trong linked list: " + sp.removeFirst());
+
         System.out.println("Linked list sau khi xoa: ");
         sp.printList();
 
-        System.out.println("xoa cuoi cung: ");
-        sp.removeLast();
+        System.out.println("xoa cuoi cung: " + sp.removeLast());
+
         System.out.println("Linked list sau khi xoa: ");
         sp.printList();
 
-        System.out.println("xoa vi tri so 2: ");
-        sp.removeIndex(2);
+        System.out.println("xoa vi tri so 2: " + sp.removeIndex(2));
+
         System.out.println("Linked list sau khi xoa: ");
         sp.printList();
     }

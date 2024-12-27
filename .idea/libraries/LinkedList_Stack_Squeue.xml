@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="LinkedList_Stack_Squeue">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/LinkedList_Stack_Squeue.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
