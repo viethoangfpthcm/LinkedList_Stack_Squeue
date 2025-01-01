@@ -4,7 +4,17 @@ import model.Node;
 
 public class Stack {
     private Node top;
-
+    private int length;
+    public Stack(){
+        this.top = null;
+        this.length = 0;
+    }
+    public int getLength(){
+        return length;
+    }
+    public boolean isEmpty(){
+        return length == 0;
+    }
     // in stack ra man hinh
     public void printStack(){
         Node temp = top;
@@ -28,7 +38,7 @@ public class Stack {
 
     // xoa node
     public int pop(){
-        if(top == null){
+        if(isEmpty()){
             System.out.println("Stack trong!!");
             return Integer.MIN_VALUE;
         }
